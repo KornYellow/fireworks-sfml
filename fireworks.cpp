@@ -3,7 +3,7 @@
 int main() {
 
 	Application app;
-	app.Run();
+	app.run();
 
 	return 0;
 }
