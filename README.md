@@ -11,10 +11,10 @@ Dependencies ของผม :
 
 คำสั่งรัน
 ```console
-./fireworks
+$ ./fireworks
 ```
 
 คำสั่งคอมไพล์ (กรณีแก้ไขไฟล์)
 ```console
-./compile.sh
+$ ./compile.sh
 ```
