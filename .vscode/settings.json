@@ -72,7 +72,8 @@
 		"valarray": "cpp",
 		"variant": "cpp",
 		"csignal": "cpp",
-		"strstream": "cpp"
+		"strstream": "cpp",
+		"*.ipp": "cpp"
 	},
 	"discord.enabled": true
 }

@@ -14,6 +14,7 @@ public:
 		this->window->setFramerateLimit(75);
 
 		this->firework_manager = new FireworkManager(this->window);
+		this->rate = 0;
 	}
 	~Application() {
 
@@ -30,8 +31,19 @@ public:
 			this->clock.restart();
 			this->firework_manager->update(delta_time);
 
-			this->window->clear();
+			if(this->rate < 0) {
+
+				this->rate = 20;
+				this->firework_manager->create_firework(random_int_range(32, WINDOW_WIDTH - 32));
+			}
+			else this->rate -= 10 * DELTA_TIME;
+
+			sf::RectangleShape background(sf::Vector2f(WINDOW_WIDTH, WINDOW_HEIGHT));
+			background.setFillColor(sf::Color(0, 0, 0, 50));
+			this->window->draw(background);
+
 			this->firework_manager->draw();
+
 			this->window->display();
 		}
 	}
@@ -64,13 +76,11 @@ private:
 					break;
 			}
 		}
-
-		if(random_int(8) == 0) {
-			this->firework_manager->create_firework(random_int_range(32, WINDOW_WIDTH - 32));
-		}
 	}
 
 	sf::RenderWindow *window;
 	FireworkManager *firework_manager;
 	sf::Clock clock;
+
+	int rate;
 };

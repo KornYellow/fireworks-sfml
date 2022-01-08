@@ -15,6 +15,7 @@ public:
 
 		for(size_t n = 0; n < this->fireworks.size(); n++) {
 
+			std::cout << this->fireworks.size() << std::endl;
 			this->fireworks[n].update(delta_time);
 
 			if(!this->fireworks[n].get_is_child()) {
@@ -27,6 +28,9 @@ public:
 			}
 			else {
 				if(this->fireworks[n].get_y() >= WINDOW_HEIGHT + (this->fireworks[n].get_radius() * 16) ||
+				   this->fireworks[n].get_y() <= -(this->fireworks[n].get_radius() * 16) ||
+				   this->fireworks[n].get_x() >= WINDOW_WIDTH + (this->fireworks[n].get_radius() * 16) ||
+				   this->fireworks[n].get_x() <= -(this->fireworks[n].get_radius() * 16) ||
 				   this->fireworks[n].get_alpha() <= 0) {
 
 					this->fireworks.erase(this->fireworks.begin() + n);
@@ -59,15 +63,15 @@ public:
 		firework.set_x_acce(0);
 		firework.set_y_acce(FIREWORK_GRAVITY);
 
-		firework.r = random_int_range(0, 255);
-		firework.g = random_int_range(0, 255);
-		firework.b = random_int_range(0, 255);
+		firework.r = random_int_range(100, 255);
+		firework.g = random_int_range(100, 255);
+		firework.b = random_int_range(100, 255);
 
 		this->fireworks.push_back(firework);
 	}
 	void create_explode(Firework root) {
 
-		uint8_t detail = 5;
+		uint8_t detail = 3;
 		for(uint8_t n = 0; n < 360 / detail; n++) {
 
 			uint angle = n * detail;
@@ -83,11 +87,11 @@ public:
 			child.set_x_speed(0);
 			child.set_y_speed(0);
 
-			child.set_x_burst((random_int_range(30, 50) * cos(angle)) * (root.get_radius() / 3));
-			child.set_y_burst((random_int_range(30, 50) * sin(angle)) * (root.get_radius() / 3));
+			child.set_x_burst((random_int_range(10, 80) * cos(angle)) * (root.get_radius() / 3));
+			child.set_y_burst((random_int_range(10, 80) * sin(angle)) * (root.get_radius() / 3));
 
 			child.set_x_acce(0);
-			child.set_y_acce(FIREWORK_GRAVITY);
+			child.set_y_acce(0);
 
 			child.r = root.r;
 			child.g = root.g;
