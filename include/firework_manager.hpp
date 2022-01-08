@@ -15,7 +15,6 @@ public:
 
 		for(size_t n = 0; n < this->fireworks.size(); n++) {
 
-			std::cout << this->fireworks.size() << std::endl;
 			this->fireworks[n].update(delta_time);
 
 			if(!this->fireworks[n].get_is_child()) {
