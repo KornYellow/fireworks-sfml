@@ -18,6 +18,9 @@ public:
 		this->y_burst = 0;
 		this->alpha = 255;
 		this->is_child = false;
+		this->r = 0;
+		this->g = 0;
+		this->b = 0;
 
 		this->shape.setPosition(this->x, this->y);
 		this->shape.setFillColor(sf::Color::White);
@@ -42,7 +45,7 @@ public:
 		}
 
 		this->shape.setPosition(this->x, this->y);
-		this->shape.setFillColor(sf::Color(255, 255, 255, this->alpha));
+		this->shape.setFillColor(sf::Color(this->r, this->g, this->b, this->alpha));
 	}
 	void draw() {
 
@@ -71,6 +74,10 @@ public:
 	float get_alpha() { return this->alpha; }
 	void set_is_child(bool is_child) { this->is_child = is_child; }
 	bool get_is_child() { return this->is_child; }
+
+	uint8_t r;
+	uint8_t g;
+	uint8_t b;
 private:
 	sf::RenderWindow *window;
 	sf::CircleShape shape;
@@ -84,5 +91,6 @@ private:
 	float x_burst;
 	float y_burst;
 	float alpha;
+
 	bool is_child;
 };

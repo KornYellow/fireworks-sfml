@@ -66,7 +66,7 @@ private:
 		}
 
 		if(random_int(8) == 0) {
-			//this->firework_manager->create_firework(random_int_range(32, WINDOW_WIDTH - 32));
+			this->firework_manager->create_firework(random_int_range(32, WINDOW_WIDTH - 32));
 		}
 	}
 

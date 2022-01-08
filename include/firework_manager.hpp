@@ -59,6 +59,10 @@ public:
 		firework.set_x_acce(0);
 		firework.set_y_acce(FIREWORK_GRAVITY);
 
+		firework.r = random_int_range(0, 255);
+		firework.g = random_int_range(0, 255);
+		firework.b = random_int_range(0, 255);
+
 		this->fireworks.push_back(firework);
 	}
 	void create_explode(Firework root) {
@@ -84,6 +88,10 @@ public:
 
 			child.set_x_acce(0);
 			child.set_y_acce(FIREWORK_GRAVITY);
+
+			child.r = root.r;
+			child.g = root.g;
+			child.b = root.b;
 
 			child.set_is_child(true);
 			this->fireworks.push_back(child);
