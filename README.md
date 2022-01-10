@@ -2,19 +2,19 @@
 
 ![Firework GIF](firework.gif "Firework GIF")
 
-เป็นโปรเจคที่ทำเล่น ๆ ซึ่งวางแผนไว้ว่าจะทำตอนปีใหม่ไว้เป็นอวยพรวันปีใหม่ แต่ก็ทำไม่ทันฮ่า ๆ ในตัวโปรแกรมก็จะแสดงผลโดยใช้ SFML
+This is planned to be a fun project for new year but I guess I'm too late.
 
-# วิธีติดตั้งและรันโปรแกรม (Linux)
+# How to install (Linux)
 
-Dependencies ของผม :
+My dependencies:
 - `SFML` 2.5
 
-คำสั่งรัน
+Run
 ```console
 $ ./fireworks
 ```
 
-คำสั่งคอมไพล์ (กรณีแก้ไขไฟล์)
+Compile
 ```console
 $ ./compile.sh
 ```
