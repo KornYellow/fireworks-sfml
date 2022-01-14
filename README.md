@@ -1,6 +1,6 @@
-# Firework SFML
+# Fireworks SFML
 
-![Firework GIF](firework.gif "Firework GIF")
+![Fireworks GIF](fireworks.gif "Fireworks GIF")
 
 This is planned to be a fun project for new year but I guess I'm too late.
 
